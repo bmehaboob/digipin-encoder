@@ -1,0 +1,382 @@
+<!DOCTYPE UI>
+<ui version="4.0">
+ <class>DIGIPIN_ENCODERDockWidget</class>
+ <widget class="QDockWidget" name="DIGIPIN_ENCODERDockWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>320</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>DIGIPIN_ENCODER</string>
+  </property>
+  <property name="features">
+   <set>QDockWidget::DockWidgetClosable|QDockWidget::DockWidgetMovable|QDockWidget::DockWidgetFloatable</set>
+  </property>
+  <widget class="QWidget" name="dockWidgetContents">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QGroupBox" name="getDigipinGroupBox">
+      <property name="title">
+       <string>Get DIGIPIN</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QPushButton" name="getDigipinButton">
+         <property name="text">
+          <string>Click on Map</string>
+         </property>
+         <property name="toolTip">
+          <string>Click on the map canvas to get DIGIPIN for that location</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="digipinLayout">
+         <item>
+          <widget class="QLabel" name="digipinLabel">
+           <property name="text">
+            <string>DIGIPIN:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="digipinLineEdit">
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+           <property name="placeholderText">
+            <string>The 10-character DIGIPIN code</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="copyDigipinButton">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>Copy</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="latLayout">
+         <item>
+          <widget class="QLabel" name="latLabel">
+           <property name="text">
+            <string>Latitude:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="latLineEdit">
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+           <property name="placeholderText">
+            <string>Latitude in WGS84 (EPSG:4326)</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="copyLatButton">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>Copy</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="lonLayout">
+         <item>
+          <widget class="QLabel" name="lonLabel">
+           <property name="text">
+            <string>Longitude:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lonLineEdit">
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+           <property name="placeholderText">
+            <string>Longitude in WGS84 (EPSG:4326)</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="copyLonButton">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>Copy</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="mapLinkLayout">
+         <item>
+          <widget class="QLabel" name="mapLinkLabel">
+           <property name="text">
+            <string>Map Link:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="mapLinkLineEdit">
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+           <property name="placeholderText">
+            <string>Google Maps link for this location</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="copyMapButton">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>Copy</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="buttonLayout">
+         <item>
+          <widget class="QPushButton" name="copyAllButton">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>Copy All</string>
+           </property>
+           <property name="toolTip">
+            <string>Copy DIGIPIN and coordinates to clipboard</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="openMapButton">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>Open Map</string>
+           </property>
+           <property name="toolTip">
+            <string>Open location in Google Maps</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="clearGetDigipinButton">
+           <property name="text">
+            <string>Clear</string>
+           </property>
+           <property name="toolTip">
+            <string>Clear Get DIGIPIN results</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="decodeDigipinGroupBox">
+      <property name="title">
+       <string>Decode DIGIPIN</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_decode">
+       <item>
+        <layout class="QHBoxLayout" name="decodeInputLayout">
+         <item>
+          <widget class="QLineEdit" name="decodeDigipinLineEdit">
+           <property name="placeholderText">
+            <string>Enter DIGIPIN to decode</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="decodeButton">
+           <property name="text">
+            <string>Decode</string>
+           </property>
+           <property name="toolTip">
+            <string>Decode DIGIPIN to coordinates</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="validateLayout">
+         <item>
+          <widget class="QPushButton" name="validateButton">
+           <property name="text">
+            <string>Validate DIGIPIN</string>
+           </property>
+           <property name="toolTip">
+            <string>Check if DIGIPIN is valid</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="clearDecodeButton">
+           <property name="text">
+            <string>Clear</string>
+           </property>
+           <property name="toolTip">
+            <string>Clear Decode DIGIPIN input</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="processLayerGroupBox">
+      <property name="title">
+       <string>Process Layer</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QPushButton" name="processLayerButton">
+         <property name="text">
+          <string>Process Active Layer</string>
+         </property>
+         <property name="toolTip">
+          <string>Add DIGIPIN information to the active layer</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="batchProcessButton">
+         <property name="text">
+          <string>Batch Process Layers</string>
+         </property>
+         <property name="toolTip">
+          <string>Process multiple layers at once</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTextBrowser" name="instructionsTextEdit">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>200</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string>color: black; background: transparent;</string>
+      </property>
+      <property name="html">
+       <string>
+        <![CDATA[
+         <p><b>Instructions for Using DIGIPIN Encoder</b></p>
+         <p><b>Get DIGIPIN:</b></p>
+         <ol>
+          <li>Click the <b>Click on Map</b> button to activate the map tool.</li>
+          <li>Click a point on the map canvas to retrieve its DIGIPIN, latitude, longitude, and Google Maps link.</li>
+          <li>Use the <b>Copy</b> buttons to copy individual fields (DIGIPIN, latitude, longitude, or map link) to the clipboard.</li>
+          <li>Click <b>Copy All</b> to copy all fields at once.</li>
+          <li>Click <b>Open Map</b> to view the location in Google Maps.</li>
+          <li>Click <b>Clear</b> to reset the Get DIGIPIN section.</li>
+         </ol>
+         <p><b>Decode DIGIPIN:</b></p>
+         <ol>
+          <li>Enter a 10-character DIGIPIN (format: XXX-XXX-XXXX) in the input field.</li>
+          <li>Click <b>Decode</b> to retrieve the corresponding latitude, longitude, and Google Maps link.</li>
+          <li>Click <b>Validate DIGIPIN</b> to check if the DIGIPIN is valid and zoom the map to its location.</li>
+          <li>Click <b>Clear</b> to reset the Decode DIGIPIN section.</li>
+         </ol>
+         <p><b>Process Layer:</b></p>
+         <ol>
+          <li>For a single layer:
+            <ul>
+             <li>Select a point or polygon vector layer in the QGIS Layers panel.</li>
+             <li>Click <b>Process Active Layer</b> to add DIGIPIN, latitude, longitude, and Google Maps link fields.</li>
+             <li>For polygons, DIGIPINs are generated using the point-on-surface method, and a 'digipin_note' field is added.</li>
+            </ul>
+          </li>
+          <li>For multiple layers:
+            <ul>
+             <li>Click <b>Batch Process Layers</b> to open a dialog.</li>
+             <li>Select multiple vector layers to process.</li>
+             <li>Confirm processing for polygon layers if prompted.</li>
+             <li>DIGIPINs and related fields will be added to all selected layers.</li>
+            </ul>
+          </li>
+         </ol>
+         <p><b>Additional Resources:</b></p>
+         <ul>
+          <li>Visit <a href="https://geospatialkeeda.site/digipin">geospatialkeeda.site/digipin</a> for more DIGIPIN tools.</li>
+          <li>This plugin is copyright &copy; <a href="https://www.indiapost.gov.in/digipin">India Post</a>.</li>
+         </ul>
+        ]]>
+       </string>
+      </property>
+      <property name="openLinks">
+       <bool>false</bool>
+      </property>
+      <property name="textInteractionFlags">
+       <set>Qt::TextBrowserInteraction</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="statusLabel">
+      <property name="text">
+       <string>Ready</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+      <property name="margin">
+       <number>5</number>
+      </property>
+      <property name="toolTip">
+       <string>Status messages</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

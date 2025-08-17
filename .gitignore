@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+*.egg
+
+# QGIS plugin development
+*.bak
+*.log
+*.tmp
+
+# IDE and editor files
+.idea/
+*.sublime-project
+*.sublime-workspace
+.vscode/
+
+# OS-specific
+Thumbs.db
+.DS_Store

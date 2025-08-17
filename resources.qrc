@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="/plugins/DIGIPIN_ENCODER" >
+    <file>icon.png</file>
+  </qresource>
+</RCC>

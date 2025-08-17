@@ -1,0 +1,20 @@
+[general]
+name=DIGIPIN ENCODER
+description=A QGIS plugin for encoding and decoding DIGIPINs using India Post's API, enabling users to generate DIGIPINs from map coordinates, process vector layers, decode DIGIPINs to coordinates, and validate locations.
+about=This plugin integrates India Post's DIGIPIN system into QGIS, allowing users to generate 10-character DIGIPIN codes from point or polygon layers, decode DIGIPINs to retrieve latitude/longitude, and validate them by zooming to locations on the map. It uses a user-configurable API hosted on a free-tier server or self-hosted instances.
+version=1.0
+qgisMinimumVersion=3.16
+qgisMaximumVersion=3.99
+author=Beig Mehaboob
+email=geospatialkeeda@gmail.com
+license=GPL-3.0
+repository=https://github.com/bmehaboob/digipin-encoder
+homepage=https://geospatialkeeda.site/digipin
+tracker=https://github.com/bmehaboob/digipin-encoder/issues
+tags=digipin, geocoding, indiapost, address, location, coordinates, vector, mapping, api, india
+category=Vector
+icon=icon.png
+experimental=False
+deprecated=False
+plugin_dependencies=requests
+changelog=Version 1.0: Initial release with features for encoding/decoding DIGIPINs, processing single and multiple vector layers, and validating DIGIPINs with map zoom.
